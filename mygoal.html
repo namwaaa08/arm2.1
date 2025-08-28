@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>My Goal - Namwa</title>
+  <link rel="stylesheet" href="mygoal.css">
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <h1>เป้าหมายชีวิต (My Goal)</h1>
+    <p>เส้นทางชีวิตและความฝันของฉัน</p>
+  </header>
+
+  <!-- Timeline -->
+  <main class="timeline">
+    <!-- เหตุการณ์ 1 -->
+    <div class="timeline-item left fade-in">
+      <div class="timeline-content">
+        <h2>วัยเด็ก</h2>
+        <p>ในวัยเด็กฉันมีความฝันอยากเป็นคนที่มีประโยชน์ต่อผู้อื่น และสนใจในศิลปะและการวาดรูปมาตั้งแต่เล็ก</p>
+      </div>
+    </div>
+
+    <!-- เหตุการณ์ 2 -->
+    <div class="timeline-item right fade-in">
+      <div class="timeline-content">
+        <h2>เส้นทางการศึกษา</h2>
+        <p>ในช่วงมัธยม ฉันเริ่มจริงจังกับการเรียนรู้ทักษะการออกแบบ และเริ่มค้นพบสิ่งที่ตัวเองรัก</p>
+      </div>
+    </div>
+
+    <!-- เหตุการณ์ 3 -->
+    <div class="timeline-item left fade-in">
+      <div class="timeline-content">
+        <h2>ก้าวเข้าสู่มหาวิทยาลัย</h2>
+        <p>ฉันเลือกศึกษาต่อด้านการออกแบบ เพื่อพัฒนาความรู้และทักษะให้ก้าวไปสู่ความฝัน</p>
+      </div>
+    </div>
+
+    <!-- เหตุการณ์ 4 -->
+    <div class="timeline-item right fade-in">
+      <div class="timeline-content">
+        <h2>เป้าหมายในอนาคต</h2>
+        <p>ตั้งใจอยากสร้างผลงานที่สามารถสร้างแรงบันดาลใจให้ผู้คน และใช้ความรู้ที่มีในการพัฒนาสังคม</p>
+      </div>
+    </div>
+
+    <!-- ปุ่มรวมอยู่กับ Timeline -->
+    <div class="timeline-buttons fade-in">
+      <a href="home.html" class="home-btn">Home</a>
+    </div>
+  </main>
+
+  <script>
+    // Fade-in effect when scrolling
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.1 };
+    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll){
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('appear');
+        appearOnScroll.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
+</body>
+</html>

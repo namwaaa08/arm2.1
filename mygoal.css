@@ -1,0 +1,119 @@
+/* ===== ฟอนต์และโทนสี ===== */
+body {
+  margin: 0;
+  font-family: "Kanit", sans-serif;
+  background: #f4f4f9;
+  color: #333;
+}
+
+/* ===== Header ===== */
+.header {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  background: linear-gradient(135deg, #faeef3, #ff758c);
+  color: white;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2.4rem;
+}
+
+.header p {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #fff;
+}
+
+/* ===== Timeline ===== */
+.timeline {
+  max-width: 900px;
+  margin: 2rem auto 3rem auto;
+  padding: 1.5rem;
+  background: white;        
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+/* Timeline Item */
+.timeline-item {
+  padding: 1.2rem;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+.timeline-item.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Timeline Content */
+.timeline-content {
+  background: #fff;
+  padding: 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.timeline-content h2 {
+  margin-top: 0;
+  color: #ff758c;
+  font-size: 1.4rem;
+}
+
+/* ===== ปุ่ม Home อยู่ด้านล่างตรงกลาง ===== */
+.timeline-buttons {
+  display: flex;
+  justify-content: center; /* จัดตรงกลาง */
+  margin-top: 30px;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.timeline-buttons a {
+  padding: 12px 28px;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+  color: white;
+  background: linear-gradient(135deg, #ff7eb9, #ff758c);
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.timeline-buttons a:hover {
+  background: #ff5a91;
+  transform: translateY(-3px);
+}
+
+/* ===== Responsive สำหรับมือถือ ===== */
+@media screen and (max-width: 768px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .timeline {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .timeline-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .timeline-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .timeline-buttons a {
+    width: 80%;         /* ปุ่มกว้างขึ้นบนมือถือ */
+    max-width: 300px;   /* จำกัดความกว้างสูงสุด */
+  }
+}

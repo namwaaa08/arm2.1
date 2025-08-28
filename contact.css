@@ -1,0 +1,125 @@
+body {
+  margin: 0;
+  font-family: 'Fredoka', sans-serif;
+  background-color: #e287b7; /* ชมพู */
+}
+
+.navbar {
+  background-color: #95486e; /* ม่วง */
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 50px;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+/* สไตล์ลิงก์ */
+.navbar a,
+.navbar .nav-left {
+  color: white;
+  text-decoration: none;
+  transition: all 0.8s ease;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.navbar a:hover,
+.navbar .nav-left:hover {
+  text-decoration: underline;
+  color: #ffd1ec;
+  transform: translateY(-3px);
+}
+
+.content {
+  display: flex;
+  justify-content: center; /* จัดกลางแนวนอน */
+  align-items: center;     /* จัดกลางแนวตั้ง */
+  padding: 25px;
+  gap: 200px; /* ระยะห่างระหว่างรูปกับข้อความ */
+  min-height: calc(100vh - 80px); /* ให้เต็มความสูงหน้าจอ ลบ navbar */
+}
+
+/* รูปภาพ */
+.photo img {
+  width: 350px;
+  border-radius: 20px; /* มุมมน */
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.photo img:hover {
+  transform: scale(1.10); /* ขยาย/เด้ง */
+  box-shadow: 0 15px 50px rgba(0,0,0,0.3), 0 0 20px rgba(255,255,255,0.3); /* เงา+แสง */
+}
+
+/* ข้อมูลติดต่อ */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* จัดกลางแนวสูงกับรูป */
+  gap: 80px;
+}
+
+/* รายการติดต่อ */
+.contact-item {
+  display: flex;
+  align-items: center;
+  font-size: 27px;
+  color: white;
+  cursor: pointer;
+}
+
+.contact-item img {
+  width: 50px;
+  height: 50px;
+  margin-right: 29px;
+}
+
+.contact-item:hover {
+  transform: translateY(-8px); /* เด้งขึ้น */
+  color: #ffd1ec;
+  text-shadow: 0px 2px 8px rgba(0,0,0,0.2);
+}
+
+.contact-item a {
+  color: white;
+  text-decoration: none;
+}
+
+.contact-item a:hover {
+  text-decoration: underline;
+}
+
+/* -----------------------------
+   Responsive สำหรับมือถือ
+--------------------------------*/
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    font-size: 28px;
+  }
+
+  .content {
+    flex-direction: column; /* จัดเป็นแนวตั้ง */
+    gap: 40px;
+    padding: 15px;
+    min-height: auto;
+  }
+
+  .photo img {
+    width: 80%;
+    max-width: 300px;
+  }
+
+  .contact-item {
+    font-size: 20px;
+    gap: 15px;
+  }
+
+  .contact-item img {
+    width: 40px;
+    height: 40px;
+  }
+}

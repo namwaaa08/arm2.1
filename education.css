@@ -1,0 +1,93 @@
+/* ฟอนต์และโทนสี */
+body {
+  margin: 0;
+  font-family: "Kanit", sans-serif;
+  background: #f9f9fb;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ff7eb9, #ff758c);
+  padding: 0.8rem 1rem;
+  font-weight: 800;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.nav-title {
+  font-size: 1.2rem;
+}
+
+/* ส่วนหัว */
+.header {
+  background-color: #a04371;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+/* กล่องเนื้อหา */
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* การ์ดแต่ละระดับการศึกษา */
+.edu-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.2s ease;
+}
+
+.edu-card:hover {
+  transform: translateY(-5px);
+}
+
+.edu-card h2 {
+  color: #a04371;
+  margin-top: 0;
+}
+
+/* ปุ่มย้อนกลับ */
+.back-btn-container {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.back-btn {
+  text-decoration: none;
+  color: white;
+  background: #a04371;
+  padding: 0.7rem 1.5rem;
+  border-radius: 15px;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.back-btn:hover {
+  background: #822f59;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background: #ff758c;
+  color: white;
+  margin-top: 2rem;
+}
+/* ปุ่มย้อนกลับอยู่ล่างสุด */
+.back-btn-container {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+}
+

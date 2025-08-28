@@ -1,0 +1,223 @@
+/* ===============================
+   นำเข้า Google Fonts
+================================ */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap');
+
+/* ===============================
+   Body Base
+================================ */
+body {
+    margin: 0;
+    font-family: 'Fredoka', sans-serif;
+    background-color: #e88fc3;
+}
+
+/* ===============================
+   Navbar
+================================ */
+.navbar {
+    background-color: #9d3c6b;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 80px 70px;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 24px 0 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 36px;
+    font-weight: 600;
+    position: relative;
+    transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.navbar a:hover {
+    transform: scale(1.2) rotate(-5deg);
+    color: #ffe6f0;
+    text-shadow: 0 0 15px rgba(255,255,255,0.8), 0 0 25px rgba(255,192,220,0.6);
+}
+
+/* Animated underline */
+.navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 4px;
+    left: 0;
+    bottom: -5px;
+    background: #fff;
+    border-radius: 2px;
+    transition: width 0.4s ease, background-color 0.4s ease;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+    background: linear-gradient(90deg, #ffd1e0, #ff99cc);
+}
+
+/* Optional sparkle effect */
+@keyframes sparkle {
+    0% { transform: translate(0,0) rotate(0deg); opacity: 0.7; }
+    50% { transform: translate(2px,-2px) rotate(20deg); opacity: 1; }
+    100% { transform: translate(0,0) rotate(0deg); opacity: 0.7; }
+}
+
+.navbar a:hover span.sparkle {
+    display: inline-block;
+    animation: sparkle 0.6s infinite;
+    color: #fff;
+}
+
+/* Mobile hover adjustment */
+@media (max-width: 768px) {
+    .navbar a:hover {
+        transform: scale(1.1) rotate(-2deg);
+    }
+}
+
+/* ===============================
+   Profile Container
+================================ */
+.profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    gap: 50px;
+    flex-wrap: wrap;
+    animation: floatProfile 6s ease-in-out infinite;
+}
+
+/* Float animation */
+@keyframes floatProfile {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+}
+
+/* ===============================
+   Profile Image
+================================ */
+.profile-image img {
+    width: 350px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease;
+}
+
+.profile-image img:hover {
+    transform: scale(1.15) rotate(-5deg);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6), 0 0 25px rgba(255,255,255,0.3) inset;
+    filter: brightness(1.2) saturate(1.2);
+}
+
+/* ===============================
+   Profile Info
+================================ */
+.profile-info {
+    color: white;
+    font-size: 22px;
+    line-height: 1.8;
+    font-weight: bold;
+    max-width: 400px;
+    transition: transform 0.5s ease, text-shadow 0.5s ease, color 0.5s ease;
+    position: relative;
+}
+
+/* Hover effect */
+.profile-info:hover {
+    transform: translateY(-5px) scale(1.05);
+    text-shadow:
+        2px 2px 8px rgba(0,0,0,0.5),
+        0 0 10px rgba(255,255,255,0.6),
+        0 0 20px rgba(255,200,230,0.5);
+    color: #ffe6f0;
+}
+
+/* Glow animation for text */
+@keyframes glowText {
+    0%, 100% { text-shadow: 0 0 5px #fff; }
+    50% { text-shadow: 0 0 15px #fff, 0 0 25px #ff99cc; }
+}
+
+.profile-info span {
+    display: inline-block;
+    animation: glowText 2s infinite alternate;
+}
+
+/* ===============================
+   Responsive
+================================ */
+/* Tablet */
+@media (max-width: 1024px) {
+    .profile-info {
+        font-size: 18px;
+    }
+    .profile-image img {
+        width: 350px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .profile-info {
+        font-size: 16px;
+        line-height: 1.6;
+        text-align: center;
+    }
+    .profile-image img {
+        width: 150px;
+        margin-bottom: 20px;
+    }
+}
+/* Bounce animation */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0) scale(1); }
+    25% { transform: translateY(-6px) scale(1.05); }
+    50% { transform: translateY(-12px) scale(1.1); }
+    75% { transform: translateY(-6px) scale(1.05); }
+}
+/* เลือกเฉพาะ Profile และ Home */
+.profile-link,
+.home-link {
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Hover: เด้ง + glow + rotate เล็กน้อย */
+.profile-link:hover,
+.home-link:hover {
+    animation: bounce 0.6s ease;  /* เด้งครั้งเดียวตอน hover */
+    transform: scale(1.2) rotate(-5deg);
+    color: #ffe6f0;  /* สีชมพูอ่อน */
+    text-shadow: 0 0 15px rgba(255,255,255,0.8),
+                 0 0 25px rgba(255,192,220,0.6);
+}
+
+/* Optional: underline เด้ง */
+.profile-link::after,
+.home-link::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 4px;
+    left: 0;
+    bottom: -5px;
+    background: #fff;
+    border-radius: 2px;
+    transition: width 0.4s ease, background-color 0.4s ease;
+}
+
+.profile-link:hover::after,
+.home-link:hover::after {
+    width: 100%;
+    background: linear-gradient(90deg, #ffd1e0, #ff99cc);
+}
